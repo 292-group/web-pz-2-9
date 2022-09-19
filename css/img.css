@@ -1,0 +1,23 @@
+img{
+    width:200px ;
+    height:200px ;
+}
+.img_group{
+    width:200px ;
+    height:200px ;
+}
+.hovered_false{
+    border-radius: 50%;
+    border: solid rgb(183, 0, 0) 7px;
+}
+.hovered_true{
+    border-radius: 50%;
+    border: solid rgb(0, 234, 70) 7px;
+}
+.drop_true{
+    border-radius: 50%;
+    border: solid rgb(0, 81, 24) 7px;
+}
+.hide{
+    display: none;
+}
