@@ -1,22 +1,23 @@
 img{
-    width:200px ;
-    height:200px ;
+    width:100px ;
+    height:100px ;
+    padding: 10px;
 }
 .img_group{
-    width:200px ;
-    height:200px ;
+    width:100px ;
+    height:100px ;
 }
 .hovered_false{
     border-radius: 50%;
-    border: solid rgb(183, 0, 0) 7px;
+    border: solid rgb(183, 0, 0) 3px;
 }
 .hovered_true{
     border-radius: 50%;
-    border: solid rgb(0, 234, 70) 7px;
+    border: solid rgb(0, 234, 70) 3px;
 }
 .drop_true{
     border-radius: 50%;
-    border: solid rgb(0, 81, 24) 7px;
+    border: solid rgb(0, 81, 24) 3px;
 }
 .hide{
     display: none;

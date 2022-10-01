@@ -20,18 +20,27 @@ function severalRandom(min, max, num) {
 randomArr=severalRandom(1,25,25);
 randomArrForOneImg=severalRandom(1,25,25);
 
-//cecle for build game field 
+    // cecle for build game field 
 for(let i=0;i<25;i++){
-    block=document.createElement('div');
-    block.innerHTML=(`<img class='img_group img${randomArr[i]}' id=${i} draggable="true" src="./img/${randomArr[i]}.png" alt="">`)
-    block.className='game_block';
-    document.querySelector('.game_field').appendChild(block);
+    if(i===0||i%5===0){
+    block=document.createElement('tr');
+    let a=i;
+    block.innerHTML=(
+        `<td'><img class='img_group img${randomArr[a]}' id=${a} draggable="true" src="./img/${randomArr[a++]}.png" alt=""></td>
+        <td'><img class='img_group img${randomArr[a]}' id=${a} draggable="true" src="./img/${randomArr[a++]}.png" alt=""></td>
+        <td'><img class='img_group img${randomArr[a]}' id=${a} draggable="true" src="./img/${randomArr[a++]}.png" alt=""></td>
+        <td'><img class='img_group img${randomArr[a]}' id=${a} draggable="true" src="./img/${randomArr[a++]}.png" alt=""></td>
+        <td'><img class='img_group img${randomArr[a]}' id=${a} draggable="true" src="./img/${randomArr[a++]}.png" alt=""></td>`)
+        a=0;
+        document.querySelector('.game_field').appendChild(block);
     }
+}
+
     //drag and drop function
     const dragAndDrop=()=>{
-        const BlockWithImage= document.querySelector('.block_with_img');
+        const blockWithImage= document.querySelector('.block_with_img');
         const imgGroup=document.querySelectorAll('.img_group');
-        BlockWithImage.innerHTML=(`<img class='img i${check}' draggable='true' src="./img/${randomArrForOneImg[check]}.png" alt="">`);
+        blockWithImage.innerHTML=(`<img class='img i${check}' draggable='true' src="./img/${randomArrForOneImg[check]}.png" alt="">`);
         const img=document.querySelector(`.i${check}`);
 
         const dragStart=function(){
@@ -62,8 +71,8 @@ for(let i=0;i<25;i++){
 
         const dragDrop=function(){
             if(this.classList.contains(`img${randomArrForOneImg[check]}`)){
-                this.classList.add('drag_true');
-                BlockWithImage.innerHTML=(`<img class='img i${check} '  draggable='true' src="./img/${randomArrForOneImg[++check]}.png" alt="">`);
+                this.classList.add('drop_true');
+                blockWithImage.innerHTML=(`<img class='img i${check} '  draggable='true' src="./img/${randomArrForOneImg[++check]}.png" alt="">`);
                 if(check==11 ) alert("Вітаюю ви виграли!!!")
             }
             else{
