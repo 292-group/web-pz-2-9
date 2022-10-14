@@ -41,11 +41,12 @@ font-size: 100px;
     .game_field_main{
         display: grid;
         margin: 50px;
-        min-width: 628px;
+        
         grid-area: gf;
     }
     .game_field{
         border:solid black 4px;
+        width: 640px;
     }
     .back{
         margin: 10px;
@@ -57,5 +58,8 @@ font-size: 100px;
         border-radius: 10px;
         width: 120px;
         height: 50px;
+    }
+    td{
+        border: solid black 2px;
     }
 

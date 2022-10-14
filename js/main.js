@@ -1,6 +1,7 @@
 $('.second_screen').hide();
 $('.third_screen').hide();
-let block,randomArr=[],randomArrForOneImg=[],check=1;
+let block="",randomArr=[],randomArrForOneImg=[],check=1;
+let tr="";
 
 //click on button 'Почати гру'
 document.querySelector('.start_game').onclick=()=>{
@@ -23,18 +24,21 @@ randomArrForOneImg=severalRandom(1,25,25);
     // cecle for build game field 
 for(let i=0;i<25;i++){
     if(i===0||i%5===0){
-    block=document.createElement('tr');
+    // block=document.createElement('tr');
     let a=i;
-    block.innerHTML=(
-        `<td'><img class='img_group img${randomArr[a]}' id=${a} draggable="true" src="./img/${randomArr[a++]}.png" alt=""></td>
-        <td'><img class='img_group img${randomArr[a]}' id=${a} draggable="true" src="./img/${randomArr[a++]}.png" alt=""></td>
-        <td'><img class='img_group img${randomArr[a]}' id=${a} draggable="true" src="./img/${randomArr[a++]}.png" alt=""></td>
-        <td'><img class='img_group img${randomArr[a]}' id=${a} draggable="true" src="./img/${randomArr[a++]}.png" alt=""></td>
-        <td'><img class='img_group img${randomArr[a]}' id=${a} draggable="true" src="./img/${randomArr[a++]}.png" alt=""></td>`)
+    block+=(`<tr>
+        <td><img class='img_group img${randomArr[a]}' id=${a} draggable="true" src="./img/${randomArr[a++]}.png" alt=""></td>
+        <td><img class='img_group img${randomArr[a]}' id=${a} draggable="true" src="./img/${randomArr[a++]}.png" alt=""></td>
+        <td><img class='img_group img${randomArr[a]}' id=${a} draggable="true" src="./img/${randomArr[a++]}.png" alt=""></td>
+        <td><img class='img_group img${randomArr[a]}' id=${a} draggable="true" src="./img/${randomArr[a++]}.png" alt=""></td>
+        <td><img class='img_group img${randomArr[a]}' id=${a} draggable="true" src="./img/${randomArr[a++]}.png" alt=""></td>
+        </tr>`);
         a=0;
-        document.querySelector('.game_field').appendChild(block);
+        
     }
 }
+document.querySelector('.game_field').innerHTML=(block);
+// $('.game_field').append(block);
 
     //drag and drop function
     const dragAndDrop=()=>{
